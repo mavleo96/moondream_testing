@@ -83,8 +83,8 @@ contradictions (reasoning concludes one letter, `result.answer` reports another)
 
 ```
 scripts/
-  process_data.py    build concatenated PNGs from the HF dataset (full_1024px, blind_1024px, full_358px)
-  prepare_jsonl.py    build batch API input JSONLs + ground truth
+  process_data.py    build concatenated PNGs from the HF dataset (full_1024px, blind_1024px, full_358px) + ground truth
+  prepare_jsonl.py    build batch API input JSONLs
   run_test.sh         upload -> poll -> download one batch test (cloud models)
   run_local.py        run one test locally via Photon (moondream2, or any model Photon supports)
 data/
@@ -101,8 +101,8 @@ results/                                           outputs + batches.log, named 
 Requires `MOONDREAM_API_KEY` in `.env`, plus `jq`. Python deps: `datasets`, `pillow`, `tqdm`.
 
 ```bash
-python3 scripts/process_data.py     # regenerate images (only needed once)
-python3 scripts/prepare_jsonl.py    # regenerate JSONLs + ground truth
+python3 scripts/process_data.py     # regenerate images + ground truth (only needed once)
+python3 scripts/prepare_jsonl.py    # regenerate JSONLs
 
 scripts/run_test.sh data/batches/full_reasoning_1024px.jsonl   full_reasoning_1024px
 scripts/run_test.sh data/batches/full_noreasoning_1024px.jsonl full_noreasoning_1024px

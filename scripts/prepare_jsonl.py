@@ -61,11 +61,3 @@ build(
 )
 build(["blind_1024px"], os.path.join(IMAGES_DIR, "blind_1024px"), [True])
 build(["full_reasoning_358px"], os.path.join(IMAGES_DIR, "full_358px"), [True])
-
-with open(os.path.join(ROOT, "data", "ground_truth.json"), "w") as f:
-    json.dump(
-        {item["idx"]: {"answer": item["answer"], "choices": item["choices"]} for item in dataset},
-        f,
-        indent=2,
-    )
-print("ground_truth.json written")

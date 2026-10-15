@@ -1,6 +1,7 @@
 from datasets import load_dataset
 from PIL import Image
 from tqdm import tqdm
+import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,3 +43,11 @@ for item in tqdm(dataset):
         (round(img.width * SMALL_HEIGHT / img.height), SMALL_HEIGHT), Image.LANCZOS
     )
     small.save(os.path.join(FULL_358PX_DIR, f"{item['idx']}.png"))
+
+with open(os.path.join(ROOT, "data", "ground_truth.json"), "w") as f:
+    json.dump(
+        {item["idx"]: {"answer": item["answer"], "choices": item["choices"]} for item in dataset},
+        f,
+        indent=2,
+    )
+print("ground_truth.json written")
