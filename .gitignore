@@ -1,0 +1,12 @@
+# secrets
+.env
+
+# generated data (rebuild with scripts/process_data.py + scripts/prepare_jsonl.py)
+data/
+
+# python
+__pycache__/
+.ipynb_checkpoints/
+
+# macos
+.DS_Store

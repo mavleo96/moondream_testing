@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.moondream.ai)",
+      "WebSearch",
+      "Bash(rm -f results/test_isolate.jsonl results/test_isolate2.jsonl results/test_multi_image.jsonl results/test_multi_image_datauri.jsonl results/batches.log)",
+      "Bash(rm -rf scripts/__pycache__)"
+    ]
+  }
+}
