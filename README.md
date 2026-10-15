@@ -24,25 +24,10 @@ Prompt: the dataset's `prompt` field with "first image" → "left image" and
 
 Val answer distribution (ground truth): A=51 (29.7%), B=33 (19.2%), C=44 (25.6%), D=44 (25.6%).
 
-## Results (moondream3.1-9B-A2B, batch API)
+## Results
 
-| Test | Accuracy | Pred A | Pred B | Pred C | Pred D |
-|---|---|---|---|---|---|
-| `full_reasoning_1024px` | 28.5% (49/172) | 16.3% | 22.7% | 48.8% | 12.2% |
-| `full_noreasoning_1024px` | 33.7% (58/172) | 12.2% | 9.3% | 76.2% | 2.3% |
-| `blind_1024px` | 23.8% (41/172) | 9.9% | 8.1% | 51.7% | 30.2% |
-| `full_reasoning_358px` | 23.3% (40/172) | 14.5% | 15.7% | 57.0% | 12.8% |
-
-All four are at or near chance (25%), with a strong, consistent bias toward answering "C"
-regardless of test condition — even `blind_1024px`, where the model can't see the candidate
-points at all, still answers confidently and hallucinates a justification (e.g. "point C is
-circled") for a right half that's pure black. `full_reasoning_358px` scores close to
-`blind_1024px`, consistent with the forced single-crop view losing most of the detail that
-distinguishes "actually seeing the candidates" from "blind."
-
-Enabling `reasoning` changes the model's final answer on 86/172 samples (50%) vs. `noreasoning`
-on the same images — a large, genuine effect, not just appended narration. Answer/reasoning-text
-contradictions (reasoning concludes one letter, `result.answer` reports another) are rare: 1/172.
+See [RESULTS.md](RESULTS.md) for full accuracy, answer-distribution, recall, and cross-model
+agreement tables for both moondream2 and moondream3.1-9B-A2B.
 
 ## Methodology notes
 

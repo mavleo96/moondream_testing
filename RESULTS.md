@@ -12,8 +12,6 @@ A=51, B=33, C=44, D=44.
 | `blind_1024px`            | 23.8% (41/172) | 23.8% (41/172) |
 | `full_reasoning_358px`    | 20.9% (36/172) | 23.3% (40/172) |
 
-moondream3.1-9B-A2B numbers match the README's existing table.
-
 ## Answer distribution
 
 Strict parsing: `result.answer` must equal exactly one of `A`/`B`/`C`/`D` (or parenthesized);
@@ -21,10 +19,10 @@ anything else is counted as NONSTD.
 
 | Test | moondream2 (A/B/C/D/NONSTD) | moondream3.1-9B-A2B (A/B/C/D) |
 |---|---|---|
-| `full_reasoning_1024px`   | 18 / 72 / 24 / 57 / 1 | 28 / 39 / 84 / 21 |
-| `full_noreasoning_1024px` | 7 / 103 / 42 / 20 / 0 | 21 / 16 / 131 / 4 |
-| `blind_1024px`            | 76 / 54 / 15 / 27 / 0 | 17 / 14 / 89 / 52 |
-| `full_reasoning_358px`    | 42 / 68 / 19 / 32 / 11 | 25 / 27 / 98 / 22 |
+| `full_reasoning_1024px`   | 10.5% / 41.9% / 14.0% / 33.1% / 0.6% | 16.3% / 22.7% / 48.8% / 12.2% |
+| `full_noreasoning_1024px` | 4.1% / 59.9% / 24.4% / 11.6% / 0.0% | 12.2% / 9.3% / 76.2% / 2.3% |
+| `blind_1024px`            | 44.2% / 31.4% / 8.7% / 15.7% / 0.0% | 9.9% / 8.1% / 51.7% / 30.2% |
+| `full_reasoning_358px`    | 24.4% / 39.5% / 11.0% / 18.6% / 6.4% | 14.5% / 15.7% / 57.0% / 12.8% |
 
 NONSTD records:
 - `full_reasoning_1024px_moondream2.jsonl`: `val_Visual_Correspondence_92` → `"B, C, D"`
@@ -54,13 +52,11 @@ No NONSTD records in any moondream3.1-9B-A2B file.
 | moondream2 | 71/172 |
 | moondream3.1-9B-A2B | 86/172 |
 
-moondream3.1-9B-A2B's 86/172 matches the README's existing figure.
-
 ## Answer/reasoning-text contradictions
 
 Checked for reasoning text containing "answer is X" where X differs from `result.answer`.
-Found 1 total: `full_reasoning_1024px_moondream3.1-9B-A2B.jsonl`, `val_Visual_Correspondence_78`
-— matches the README's existing note. 0 in all other 7 files.
+Found 1 total: `full_reasoning_1024px_moondream3.1-9B-A2B.jsonl`, `val_Visual_Correspondence_78`.
+0 in all other 7 files.
 
 ## Cross-model agreement per test
 
