@@ -1,0 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+datasets==5.0.1
+pillow==12.3.0
+tqdm==4.70.0
+moondream==2.6.1
+
+transformers==4.57.6
+torch==2.14.0+cu130
